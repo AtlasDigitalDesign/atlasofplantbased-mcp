@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Norcalnappy/atlasofplantbased-pct",
+  "title": "Atlas of Plant Based: PCT data",
+  "description": "Read-only Pacific Crest Trail data: legs by trail mile, towns, passes and lakes, and vegan resupply.",
+  "version": "1.0.0",
+  "websiteUrl": "https://atlasofplantbased.com/api/",
+  "repository": {
+    "url": "https://github.com/Norcalnappy/atlasofplantbased-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://atlasofplantbased.com/mcp"
+    }
+  ]
+}
