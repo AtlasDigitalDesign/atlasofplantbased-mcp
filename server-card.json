@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": { "name": "atlas-of-plant-based-pct", "title": "Atlas of Plant Based: PCT data", "version": "1.0.0" },
+  "description": "Read-only Pacific Crest Trail data from atlasofplantbased.com: the 26 legs with trail miles, towns, passes and lakes by mile, and vegan resupply at common stops with the date each was last checked.",
+  "documentationUrl": "https://atlasofplantbased.com/api/",
+  "endpoint": "https://atlasofplantbased.com/mcp",
+  "transport": { "type": "streamable-http", "endpoint": "https://atlasofplantbased.com/mcp" },
+  "capabilities": { "tools": { "listChanged": false }, "resources": {}, "prompts": {} },
+  "authentication": { "required": false },
+  "tools": [
+    { "name": "get_pct_leg", "description": "One PCT leg: trail miles, length, 2021 days and dates, and its page." },
+    { "name": "find_by_trail_mile", "description": "The leg and nearest towns, passes and lakes for a PCT trail mile." },
+    { "name": "vegan_resupply", "description": "Vegan resupply by town or mile range, with last-checked dates." },
+    { "name": "list_pct_points", "description": "Towns, passes, lakes and peaks with mile, coordinates and height." }
+  ]
+}
