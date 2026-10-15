@@ -1,5 +1,7 @@
 # Atlas of Plant Based: PCT data MCP server
 
+[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/norcalnappy/atlasofplantbased-mcp)
+
 A read-only MCP server for Pacific Crest Trail data from atlasofplantbased.com: the 26 legs of a 2021 thru-hike with trail miles, towns, passes and lakes by mile, and vegan resupply at 64 common stops with the date each row was last checked.
 
 Endpoint: https://atlasofplantbased.com/mcp (Streamable HTTP, stateless, no auth)
