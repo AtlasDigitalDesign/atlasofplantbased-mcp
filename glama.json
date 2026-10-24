@@ -1,6 +1,8 @@
 {
   "$schema": "https://glama.ai/mcp/schemas/server.json",
-  "maintainers": ["Norcalnappy"],
+  "maintainers": [
+    "AtlasDigitalDesign"
+  ],
   "name": "atlasofplantbased-mcp",
   "description": "Read-only Pacific Crest Trail data: legs, points and vegan resupply with last-checked dates.",
   "category": "location"
