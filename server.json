@@ -12,7 +12,7 @@
   "remotes": [
     {
       "type": "streamable-http",
-      "url": "https://atlasofplantbased.com/mcp"
+      "url": "https://atlasofplantbased.com/mcp/"
     }
   ]
 }
