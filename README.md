@@ -10,7 +10,7 @@ Same data as JSON: https://atlasofplantbased.com/api/ (OpenAPI at /openapi.json)
 
 ## Tools
 
-- get_pct_leg: one of the 26 legs, with FarOut trail miles, length, 2021 days and dates, and the page that covers it
+- get_pct_leg: one of the 26 legs, with trail miles, length, 2021 days and dates, and the page that covers it
 - find_by_trail_mile: the leg and the nearest towns, passes and lakes for any trail mile, 0 to 2656.4
 - vegan_resupply: what each stop carries, whether a mailed box is advised, and the date it was last checked; search by town or mile range
 - list_pct_points: towns, passes, lakes and peaks with mile, coordinates and trail height

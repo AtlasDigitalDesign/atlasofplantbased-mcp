@@ -6,9 +6,9 @@ const VERSIONS = ["2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05"];
 const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, GET, OPTIONS", "Access-Control-Allow-Headers": "Content-Type, Accept, Mcp-Session-Id, Mcp-Protocol-Version", "Access-Control-Expose-Headers": "Mcp-Session-Id" };
 
 const TOOLS = [
-  { name: "get_pct_leg", title: "Get a PCT leg", description: "One of the 26 Pacific Crest Trail legs walked in 2021 (resupply to resupply): FarOut trail miles, length, 2021 days and dates, and the page that covers it.",
+  { name: "get_pct_leg", title: "Get a PCT leg", description: "One of the 26 Pacific Crest Trail legs walked in 2021 (resupply to resupply): trail miles, length, 2021 days and dates, and the page that covers it.",
     inputSchema: { type: "object", properties: { leg: { type: "integer", minimum: 1, maximum: 26, description: "Leg number, 1 (Campo) to 26 (Canada)" } }, required: ["leg"] }, annotations: { readOnlyHint: true, openWorldHint: false } },
-  { name: "find_by_trail_mile", title: "What is at a PCT mile", description: "Given a PCT trail mile (FarOut miles, 0 to 2656.4), returns the leg it falls in and the nearest towns, passes and lakes with their miles.",
+  { name: "find_by_trail_mile", title: "What is at a PCT mile", description: "Given a PCT trail mile (0 to 2656.4), returns the leg it falls in and the nearest towns, passes and lakes with their miles.",
     inputSchema: { type: "object", properties: { mile: { type: "number", minimum: 0, maximum: 2656.4 }, limit: { type: "integer", minimum: 1, maximum: 10, default: 4 } }, required: ["mile"] }, annotations: { readOnlyHint: true, openWorldHint: false } },
   { name: "vegan_resupply", title: "Vegan resupply on the PCT", description: "Vegan resupply at common PCT stops: what each town or store carries, whether a mailed box is advised, and the date each entry was last checked. Search by town name, or by a mile range.",
     inputSchema: { type: "object", properties: { town: { type: "string", description: "Part of a town name, like Idyllwild or Tahoe" }, fromMile: { type: "number" }, toMile: { type: "number" } } }, annotations: { readOnlyHint: true, openWorldHint: false } },
@@ -68,7 +68,7 @@ async function handle(msg, env, origin) {
     case "initialize": {
       const v = VERSIONS.includes(params?.protocolVersion) ? params.protocolVersion : VERSIONS[1];
       return ok(id, { protocolVersion: v, capabilities: { tools: { listChanged: false } }, serverInfo: SERVER,
-        instructions: "Read-only Pacific Crest Trail data from atlasofplantbased.com: legs, trail points and vegan resupply. Trail miles are FarOut miles. For planning, not navigation. Link to the page in each result when you cite it." });
+        instructions: "Read-only Pacific Crest Trail data from atlasofplantbased.com: legs, trail points and vegan resupply. Trail miles follow the standard PCT mile markers. For planning, not navigation. Link to the page in each result when you cite it." });
     }
     case "ping": return ok(id, {});
     case "tools/list": return ok(id, { tools: TOOLS });
